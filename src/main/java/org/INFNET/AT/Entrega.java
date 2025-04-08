@@ -5,16 +5,10 @@ public class Entrega {
     private final double peso;
     private final String destinatario;
 
-    public Entrega(String endereco, double peso, String destinatario) {
-        if (endereco == null || endereco.isEmpty()) {
-            throw new IllegalArgumentException("Endereço não pode ser vazio");
-        }
-        if (peso <= 0) {
-            throw new IllegalArgumentException("Peso deve ser maior que zero");
-        }
-        if (destinatario == null || destinatario.isEmpty()) {
-            throw new IllegalArgumentException("Destinatário não pode ser vazio");
-        }
+    public Entrega(String endereco, double peso, String destinatario) throws EnderecoInvalidoException, PesoInvalidoException, DestinatarioInvalidoException {
+        if (endereco == null || endereco.isEmpty()) throw new EnderecoInvalidoException();
+        if (peso <= 0) throw new PesoInvalidoException();
+        if (destinatario == null || destinatario.isEmpty()) throw new DestinatarioInvalidoException();
 
         this.endereco = endereco;
         this.peso = peso;

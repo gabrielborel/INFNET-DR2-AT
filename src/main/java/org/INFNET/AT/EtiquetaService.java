@@ -4,9 +4,7 @@ public class EtiquetaService {
     private final CalculadoraFrete calculadoraFrete;
 
     public EtiquetaService(CalculadoraFrete calculadoraFrete) {
-        if (calculadoraFrete == null) {
-            throw new NullPointerException("Calculadora de frete não pode ser nula");
-        }
+        if (calculadoraFrete == null) throw new TipoFreteInvalidoException();
         this.calculadoraFrete = calculadoraFrete;
     }
 
