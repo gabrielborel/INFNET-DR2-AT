@@ -1,4 +1,6 @@
-package org.INFNET.AT;
+package org.INFNET.AT.fretes;
+
+import org.INFNET.AT.entregas.Entrega;
 
 public class FreteExpresso implements CalculadoraFrete {
     private static final double TARIFA_POR_KG = 1.5;

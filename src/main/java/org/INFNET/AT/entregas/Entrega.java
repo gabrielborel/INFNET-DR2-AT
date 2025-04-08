@@ -1,11 +1,15 @@
-package org.INFNET.AT;
+package org.INFNET.AT.entregas;
+
+import org.INFNET.AT.exceptions.DestinatarioInvalidoException;
+import org.INFNET.AT.exceptions.EnderecoInvalidoException;
+import org.INFNET.AT.exceptions.PesoInvalidoException;
 
 public class Entrega {
     private final String endereco;
     private final double peso;
     private final String destinatario;
 
-    public Entrega(String endereco, double peso, String destinatario) throws EnderecoInvalidoException, PesoInvalidoException, DestinatarioInvalidoException {
+    public Entrega(String endereco, double peso, String destinatario) {
         if (endereco == null || endereco.isEmpty()) throw new EnderecoInvalidoException();
         if (peso <= 0) throw new PesoInvalidoException();
         if (destinatario == null || destinatario.isEmpty()) throw new DestinatarioInvalidoException();
